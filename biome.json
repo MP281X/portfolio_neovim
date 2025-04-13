@@ -1,0 +1,93 @@
+{
+	"$schema": "../node_modules/@biomejs/biome/configuration_schema.json",
+
+	"organizeImports": { "enabled": true },
+	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+
+	"formatter": {
+		"enabled": true,
+		"lineWidth": 120,
+		"indentWidth": 2,
+		"lineEnding": "lf",
+		"indentStyle": "tab",
+		"formatWithErrors": true,
+		"attributePosition": "auto"
+	},
+
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"all": true,
+			"performance": {
+				"noDelete": "off",
+				"noBarrelFile": "off",
+				"noReExportAll": "off",
+				"useTopLevelRegex": "off",
+				"noAccumulatingSpread": "off"
+			},
+			"complexity": {
+				"noVoid": "off",
+				"noForEach": "off",
+				"useLiteralKeys": "off",
+				"useArrowFunction": "error",
+				"noUselessTypeConstraint": "off",
+				"useSimplifiedLogicExpression": "off",
+				"noExcessiveCognitiveComplexity": "off"
+			},
+			"suspicious": {
+				"useAwait": "off",
+				"noConsole": "off",
+				"noConsoleLog": "off",
+				"noEmptyBlock": "off",
+				"noExplicitAny": "off",
+				"noFocusedTests": "off",
+				"noEvolvingTypes": "off",
+				"noArrayIndexKey": "off",
+				"noImplicitAnyLet": "off",
+				"noConfusingVoidType": "off",
+				"noReactSpecificProps": "off",
+				"noAssignInExpressions": "off",
+				"noEmptyBlockStatements": "off",
+				"noControlCharactersInRegex": "off"
+			},
+			"style": {
+				"noNamespace": "off",
+				"useTemplate": "off",
+				"noUselessElse": "off",
+				"noDefaultExport": "off",
+				"noNamespaceImport": "off",
+				"noNonNullAssertion": "off",
+				"useBlockStatements": "off",
+				"useDefaultSwitchClause": "off",
+				"useShorthandArrayType": "error",
+				"useNamingConvention": { "level": "off", "options": { "strictCase": false } }
+			},
+			"correctness": {
+				"useYield": "off",
+				"noChildrenProp": "off",
+				"noUnusedImports": "off",
+				"noNodejsModules": "off",
+				"noUnusedVariables": "off",
+				"useImportExtensions": "error",
+				"noUndeclaredVariables": "off",
+				"noUndeclaredDependencies": "off"
+			},
+			"a11y": { "noLabelWithoutControl": "off" },
+			"nursery": { "useSortedClasses": { "level": "error", "fix": "safe" } }
+		}
+	},
+
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"bracketSpacing": true,
+			"bracketSameLine": false,
+			"trailingCommas": "none",
+			"semicolons": "asNeeded",
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"arrowParentheses": "asNeeded"
+		}
+	},
+	"css": { "parser": { "cssModules": true } }
+}

@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* fonts */
+@font-face {
+	font-family: "Carbon Regular";
+	src: url(../static/font.woff2) format("woff2");
+	font-style: regular;
+}
+
+@font-face {
+	font-family: "Material Symbols Rounded";
+	font-style: normal;
+	font-weight: 500;
+	font-display: block;
+	src: url(../static/icons.woff2) format("woff2");
+}
+
+/* tailwindcss config */
+@theme {
+	--font-family-carbon: "Carbon Regular";
+	--font-family-icons: "Material Symbols Rounded";
+
+	/* colors */
+	--color-\*: initial;
+
+	/* base "color" */
+	--hue: 300;
+
+	--color-accent: oklch(35% 0.1 var(--hue));
+	--color-primary: oklch(20% 0.03 var(--hue));
+	--color-secondary: oklch(17% 0.015 var(--hue));
+
+	--color-text: oklch(95% 0.03 var(--hue));
+	--color-text-secondary: oklch(90% 0.1 var(--hue));
+
+	--color-border: oklch(25% 0.02 var(--hue));
+	--color-selection: oklch(30% 0.05 var(--hue));
+
+	--color-transparent: rgba(0, 0, 0, 0);
+
+	--color-info: #58a6ff;
+	--color-error: #ff7b72;
+	--color-warning: #fbbd23;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--color-background-primary: #ffffff;
+		--color-background-secondary: #f5f5f5;
+
+		--color-text-primary: #000000;
+		--color-text-secondary: #555555;
+
+		--color-border: #e0e0e0;
+		--color-selection: #d3d3d3;
+	}
+}
+
+/* animations */
+@theme {
+	--animate-spin: spin 1s linear infinite reverse;
+}
+
+/* global config */
+html {
+	background-color: var(--color-secondary);
+}
+
+* {
+	outline: none;
+}
+
+/* text selection */
+*::selection {
+	background: var(--color-selection);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+	width: calc(var(--spacing) * 3);
+	height: calc(var(--spacing) * 3);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: var(--radius-xs);
+	background-color: var(--color-border);
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--color-transparent);
+}
+
+::-webkit-scrollbar-corner {
+	border-top-left-radius: var(--radius-sm);
+	background: var(--color-border);
+}

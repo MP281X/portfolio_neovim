@@ -1,0 +1,61 @@
+{
+	"compilerOptions": {
+		// path alias
+		"paths": {
+			"@lib/*": ["./src/lib/*"],
+			"@routes/*": ["./src/routes/*"],
+			"@components/*": ["./src/components/*"]
+		},
+
+		// ts version and module resolution (use the lasted ts/js features and types)
+		"lib": ["ESNext", "dom", "dom.iterable"],
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleDetection": "force",
+		"moduleResolution": "bundler",
+
+		// some of the settings (like allowUnreachableCode) are there only to throw with the command "tsc --noEmit" and not only in the editor
+
+		// type checking
+		"allowUnreachableCode": false, // don't allow unreachable code
+		"allowUnusedLabels": false, // mostly typos if found
+		"alwaysStrict": true, // parse every file as strict
+		"exactOptionalPropertyTypes": true, // don't allow undefined values on optional keys
+		"noFallthroughCasesInSwitch": true, // check that every statement in the swtich is valid
+		"noImplicitAny": true, // error if a value has no type set so it would have defaulted to any
+		"noImplicitReturns": true, // check that every code path has the correct return type
+		"noImplicitThis": true, // don't allow this where it would be any
+		"noImplicitOverride": true, // don't override class methods without the override keyword
+		"noPropertyAccessFromIndexSignature": true, // allow not defined key to be accessed only by obj["key_name"]
+		"noUncheckedIndexedAccess": true, // when you access an element of an array at a specific index the type is (arrayType | undefined)
+		"noUnusedLocals": true, // disable unused variables
+		"noUnusedParameters": true, // disable unused function parameters
+		"strict": true, // enable all type checking
+		"strictBindCallApply": true, // check bind/call/apply methods
+		"strictFunctionTypes": true, // function parameter are more strict
+		"strictNullChecks": true, // make null and undefined two different types
+		"useUnknownInCatchVariables": true, // mark the catch arg as unknown instead of any
+
+		// other config
+		"allowJs": true, // don't allow js file import
+		"checkJs": true, // type check js files
+		"jsx": "react-jsx", // react types for TSX files
+		"resolveJsonModule": true, // allow json import
+		"allowImportingTsExtensions": true, // allow importing ts file
+		"allowSyntheticDefaultImports": true, // impot X from "x" instead of import * as X from "x"
+		"forceConsistentCasingInFileNames": true, // no different casing importing the same file
+		"useDefineForClassFields": true, // use the TC39 class fields instead of the typescript implementation
+		"verbatimModuleSyntax": true, // if i only import a type from a file don't drop the import after compilation
+		"noEmit": true, // don't output code
+		"sourceMap": true, // enable sourcemap
+		"skipLibCheck": true, // don't check .d.ts files
+		"esModuleInterop": true, // fix problem when importing older packages
+		"isolatedModules": true, // ensure that the types you write are checkable looking at a single file
+
+		"incremental": true, // cache some informations about the types to speed up the next typechecks
+		"tsBuildInfoFile": ".tsbuildinfo" // set the name of the cache file
+	},
+
+	"exclude": ["${configDir}/**/node_modules", "${configDir}/**/dist"],
+	"include": ["${configDir}/index.ts", "${configDir}/src/**/*", "${configDir}/*.config.*", "${configDir}/*.d.ts"]
+}

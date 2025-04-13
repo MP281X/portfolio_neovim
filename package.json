@@ -1,0 +1,37 @@
+{
+	"type": "module",
+	"name": "portfolio_nvim",
+
+	"scripts": {
+		"dev": "rsbuild dev",
+		"preview": "rsbuild build && rsbuild preview",
+
+		"fix": "biome check --fix .",
+		"check": "tsc --noEmit && biome check ."
+	},
+
+	"dependencies": {
+		"react": "^19",
+		"react-dom": "^19",
+
+		"wouter": "^3",
+		"radix-ui": "latest"
+	},
+
+	"devDependencies": {
+		"typescript": "latest",
+		"@biomejs/biome": "latest",
+
+		"@types/node": "latest",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+
+		"tailwindcss": "latest",
+		"@tailwindcss/postcss": "latest",
+
+		"@rsbuild/core": "^1",
+		"@rsbuild/plugin-react": "^1",
+		"@rsbuild/plugin-babel": "^1",
+		"babel-plugin-react-compiler": "latest"
+	}
+}
