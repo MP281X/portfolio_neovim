@@ -10,19 +10,5 @@ export default defineConfig({
 			babelLoaderOptions: opts => void opts.plugins?.unshift('babel-plugin-react-compiler')
 		})
 	],
-	tools: {
-		postcss: (_, { addPlugins }) => void addPlugins(require('@tailwindcss/postcss'))
-	},
-	server: {
-		proxy: {
-			'/rest': {
-				changeOrigin: true,
-				target: 'http://localhost:8080'
-			},
-			'/rpc': {
-				changeOrigin: true,
-				target: 'http://localhost:8080'
-			}
-		}
-	}
+	tools: { postcss: (_, { addPlugins }) => void addPlugins(require('@tailwindcss/postcss')) }
 })

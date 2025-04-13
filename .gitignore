@@ -4,9 +4,6 @@
 # build output
 **/dist
 
-# cache
+# node
 **/*.tsbuildinfo
-
-# packages
 **/node_modules
-**/pnpm-lock.yaml
